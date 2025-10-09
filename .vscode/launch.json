@@ -4,9 +4,11 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Run JavaScript with Node.js",
-      "skipFiles": ["<node_internals>/**"],
-      "program": "${file}"
+      "name": "Run current file",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal",
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
