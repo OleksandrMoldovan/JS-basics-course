@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>HTML/CSS REVIEW</title>
+    <style>
+      /*
+      This is a comment
+      */
+      .red-button {
+        background-color: red;
+        font-style: italic;
+        font-size: xx-large;
+        color: beige;
+        border-color: blue;
+      }
+      .order-button {
+        color: blueviolet;
+        background-color: yellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--
+    This is a multiline comments
+    -->
+    <button title="Good job" class="red-button">Hello</button>
+    <p>Paragraph of text</p>
+
+    <button
+      title="Receive an order report"
+      class="order-button"
+      onclick="
+    //Challenge Exercises
+
+      let basketballPrice = 20.95 * 100;
+      let basketballAmount = 2;
+      let shippingPrice = 4.49 * 100;
+      let tShirtPrice = 7.99 * 100;
+      let tShirtAmount = 2;
+
+      alert(
+        `Items ${
+          tShirtAmount + basketballAmount
+        }:                                                   $${
+          (basketballAmount * basketballPrice + tShirtPrice * tShirtAmount) /
+          100
+        }
+Shipping & handling:                              $${(shippingPrice * 2) / 100}
+                                                                _______
+Total before tax:                                       $${
+          (basketballAmount * basketballPrice + tShirtPrice * tShirtAmount) /
+            100 +
+          (shippingPrice * 2) / 100
+        }
+Estimated tax (10%):                                $${
+          Math.round(
+            (basketballAmount * basketballPrice +
+              tShirtPrice * tShirtAmount +
+              shippingPrice * 2) *
+              0.1
+          ) / 100
+        } 
+-------------------------------------------------------
+
+ORDER TOTAL:                                           $${
+          Math.round(
+            basketballAmount * basketballPrice +
+              tShirtPrice * tShirtAmount +
+              shippingPrice * 2 +
+              (basketballAmount * basketballPrice +
+                tShirtPrice * tShirtAmount +
+                shippingPrice * 2) *
+                0.1
+          ) / 100
+        }
+`
+      );
+    
+    
+    "
+    >
+      Total Order
+    </button>
+
+    <script>
+      console.log(2 + 2);
+      alert("Hello Dude");
+    </script>
+  </body>
+</html>
