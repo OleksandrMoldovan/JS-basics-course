@@ -23,6 +23,23 @@
     </button>
     <button
       onclick="
+    
+    console.log(`Cart quantity: ${cartQuantity-=3}`);
+    
+    "
+    >
+      -3
+    </button>
+    <button
+      onclick="
+    console.log(`Cart quantity: ${cartQuantity-=2}`);
+    
+    "
+    >
+      -2
+    </button>
+    <button
+      onclick="
       console.log(`Cart quantity: ${cartQuantity+=2}`);
 
 "
@@ -36,6 +53,34 @@
     "
     >
       +3
+    </button>
+
+    <button
+      onclick="
+    console.log(`Cart quantity: ${cartQuantity +=4}`)
+   
+    "
+    >
+      +4
+    </button>
+
+    <button
+      onclick="
+    
+    console.log(`Cart quantity ${cartQuantity+=5}`)
+    "
+    >
+      +5
+    </button>
+
+    <button
+      onclick="
+console.log(`${--cartQuantity}`)
+console.log('Cart amount decreased on 1');
+
+"
+    >
+      Remove From Cart
     </button>
 
     <button
