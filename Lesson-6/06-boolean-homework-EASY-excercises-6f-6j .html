@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>O'Clocker</title>
+</head>
+
+<body>
+  <script>
+    let coinFlipValue = Math.random()
+    const guess = 'Heads';
+    flipResult = coinFlipValue <= 0.5 ? (console.log('Heads'), coinFlipValue = 'Heads') : (console.log('Tails'), coinFlipValue = 'Tails');
+
+    guess === flipResult ? console.log('You Win !!!') : console.log('You Lose :(');
+
+  </script>
+
+</body>
+
+</html>
