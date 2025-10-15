@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculator</title>
+</head>
+
+<body>
+  <p>
+    <button onclick="
+        addNumbers(1)
+        ">
+      1
+    </button>
+    <button onclick="
+        addNumbers(2)
+        ">
+      2
+    </button>
+    <button onclick="
+        addNumbers(3)
+        ">
+      3
+    </button>
+  </p>
+  <p>
+    <button onclick="
+       addNumbers(4)
+        ">
+      4
+    </button>
+    <button onclick="
+        addNumbers(5)
+        ">
+      5
+    </button>
+    <button onclick="
+        addNumbers(6)
+        ">
+      6
+    </button>
+  </p>
+  <p>
+    <button onclick="
+        addNumbers(7)
+        ">
+      7
+    </button>
+    <button onclick="
+       addNumbers(8)
+        ">
+      8
+    </button>
+    <button onclick="
+        addNumbers(9)
+        ">
+      9
+    </button>
+  </p>
+  <p>
+    <button onclick="
+        addNumbers(0)
+        ">
+      0
+    </button>
+    <button onclick="
+      
+     addNumbers('+')
+      ">
+      +
+    </button>
+    <button onclick="
+    
+      console.log(`Result is: ${eval(calculation)}`)
+      ">
+      =
+    </button>
+  </p>
+
+  <script>
+    let calculation = "";
+
+    function addNumbers(value) {
+      console.log(calculation += String(value))
+      return calculation
+    }
+
+  </script>
+</body>
+
+</html>
