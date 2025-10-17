@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Objects</title>
+</head>
+
+<body>
+  <script>
+    const product = {
+      priceInCents: 2095,
+      name: 'basketball'
+    }
+    console.log(product);
+    product.priceInCents += 500;
+    console.log(product);
+
+    product['delivery-time'] = '3 days'
+    console.log(product);
+
+    let product1 = {
+      price: 23,
+      name: 'aaa'
+    }
+    let product2 = {
+      price: 212,
+      name: 'aaa'
+    }
+
+
+
+    function comparePrice(product1, product2) {
+      if (product1.price < product2.price) {
+        return product1
+      } else return product2
+    }
+    console.log(comparePrice(product1, product2));
+    //// Is same product function
+
+    function isSameProduct(product1, product2) {
+      if (product1.name === product2.name && product1.price === product2.price) {
+        return true
+
+      } else return false
+    }
+    console.log(isSameProduct(product1, product2));
+
+    console.log('ABABAGALAMAGA'.toLowerCase())
+    console.log('ABABAGALAMAGA'.repeat(22))
+
+
+  </script>
+</body>
+
+</html>

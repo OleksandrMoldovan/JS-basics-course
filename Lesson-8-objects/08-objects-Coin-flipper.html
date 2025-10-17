@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coin Flipper</title>
+</head>
+
+<body>
+
+  <button onclick="
+  
+  playGame('Heads')
+  ">Heads</button>
+  <button onclick="
+   playGame('Tails')">Tails</button>
+
+  <button onclick=" localStorage.removeItem('result')
+ result.win =0;
+  result.loose =0;
+  console.log('current result' ,result);
+ // console.log(`current result ${result.loose, result.win}`);
+  
+ ">Clear Result</button>
+
+  <script>
+    let result = JSON.parse(localStorage.getItem('result')) || {
+      win: 0,
+      loose: 0
+    };
+    function playGame(guess) {
+      let coinFlipValue = Math.random()
+      //const guess = 'Heads';
+      flipResult = coinFlipValue <= 0.5 ? (console.log('Heads'), coinFlipValue = 'Heads') : (console.log('Tails'), coinFlipValue = 'Tails');
+
+      guess === flipResult ? (result.win++, console.log('You Win !!!')) : (result.loose++, console.log('You Lose :('));
+      console.log(result);
+
+      localStorage.setItem('result', JSON.stringify(result))
+      return result
+
+    }
+
+    function showResults() {
+
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>
