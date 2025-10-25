@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Coin Flipper</title>
+</head>
+
+<body>
+
+
+  <script>
+    const userData = [{
+      name: "Oleh",
+      age: 28,
+      country: "Slovakia"
+    }, {
+      name: "Krem Brule",
+      age: 28,
+      country: "Ukraine"
+    }]
+
+
+
+
+
+    function saveUserProfile(user) {
+      localStorage.setItem('userProfile', JSON.stringify(user))
+
+    }
+
+    function loadUserProfile() {
+
+      let savedData = JSON.parse(localStorage.getItem('userProfile'))
+      if (!savedData) {
+        console.log("No user profile found")
+
+        return null
+
+
+      } else return savedData
+
+
+    }
+
+    saveUserProfile(userData[0]);
+
+    console.log(loadUserProfile());
+
+
+    saveUserProfile(userData[1])
+    console.log(loadUserProfile());
+
+    saveUserProfile();
+    console.log(loadUserProfile());
+
+
+
+
+  </script>
+</body>
+
+</html>

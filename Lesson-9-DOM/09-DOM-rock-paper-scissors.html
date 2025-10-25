@@ -13,16 +13,24 @@
 
   <button onclick="
     playGame('Paper')
+
         ">Paper</button>
 
   <button onclick="
       playGame('Scissors')
         ">Scissors</button>
+  <p class="js-result"></p>
+  <p class="js-moves"></p>
+  <p class="js-score"></p>
+
+
   <button onclick="
       currentScore.playerLose=0;
       currentScore.playerTie=0;
       currentScore.playerWins=0;
       localStorage.removeItem('currentScore')
+   updateScoreElement()  
+      
         ">Reset Score</button>
 
   <script>
@@ -31,6 +39,7 @@
       playerTie: 0,
       playerWins: 0
     };
+    updateScoreElement();
 
     // if (!currentScore) {
     //   currentScore = {
@@ -41,34 +50,17 @@
     // }
 
 
-
-    function pickComputerMove() {
-      let computerMove = '';
-      const randomNumber = Math.random();
-
-
-
-      if (randomNumber >= 0 && randomNumber < 1 / 3) {
-        computerMove = 'rock';
-      } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-        computerMove = 'paper';
-      } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-        computerMove = 'scissors';
-      }
-      return computerMove;
-    }
-
     function playGame(playerMove) {
       const computerMove = pickComputerMove();
-      let result = '';
+      let result = ''
 
       if (playerMove === 'Scissors') {
 
-        if (computerMove === 'rock') {
+        if (computerMove === 'Rock') {
           result = 'You lose.';
-        } else if (computerMove === 'paper') {
+        } else if (computerMove === 'Paper') {
           result = 'You win.';
-        } else if (computerMove === 'scissors') {
+        } else if (computerMove === 'Scissors') {
           result = 'Tie.';
         }
       }
@@ -76,13 +68,11 @@
 
       else if (playerMove === 'Rock') {
 
-
-
-        if (computerMove === 'rock') {
+        if (computerMove === 'Rock') {
           result = 'Tie.';
-        } else if (computerMove === 'paper') {
+        } else if (computerMove === 'Paper') {
           result = 'You lose.';
-        } else if (computerMove === 'scissors') {
+        } else if (computerMove === 'Scissors') {
           result = 'You win.';
         }
 
@@ -90,14 +80,11 @@
 
       else {
 
-
-
-
-        if (computerMove === 'rock') {
+        if (computerMove === 'Rock') {
           result = 'You win.';
-        } else if (computerMove === 'paper') {
+        } else if (computerMove === 'Paper') {
           result = 'Tie.';
-        } else if (computerMove === 'scissors') {
+        } else if (computerMove === 'Scissors') {
           result = 'You lose.';
         }
 
@@ -111,16 +98,46 @@
       } else if (result === 'You lose.') {
         ++currentScore.playerLose
         console.log(currentScore.playerLose);
-      } else console.log(++currentScore.playerTie);
+      } else console.log(++currentScore.playerTie)
 
 
       localStorage.setItem('currentScore', JSON.stringify(currentScore))
 
-      alert(`You picked ${playerMove}. Computer picked ${computerMove}. ${result}\n Wins: ${currentScore.playerWins},  Looses: ${currentScore.playerLose}, Ties: ${currentScore.playerTie}`)
+      updateScoreElement();
+
+      document.querySelector('.js-result')
+        .innerHTML = result
+      document.querySelector('.js-moves')
+        .innerHTML = `You  ${playerMove}. Computer ${computerMove}`
+      document.querySelector('.js-score')
+        .innerHTML = `Wins: ${currentScore.playerWins},  Losses: ${currentScore.playerLose}, Ties: ${currentScore.playerTie}`;
+
+    }
+
+    function updateScoreElement() {
+
+      document.querySelector('.js-score')
+        .innerHTML = `Wins: ${currentScore.playerWins},  Losses: ${currentScore.playerLose}, Ties: ${currentScore.playerTie}`;
+
 
 
     }
 
+    function pickComputerMove() {
+      let computerMove = '';
+      const randomNumber = Math.random();
+
+
+
+      if (randomNumber >= 0 && randomNumber < 1 / 3) {
+        computerMove = 'Rock';
+      } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+        computerMove = 'Paper';
+      } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+        computerMove = 'Scissors';
+      }
+      return computerMove;
+    }
 
 
   </script>
