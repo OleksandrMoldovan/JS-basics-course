@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Projects</title>
+</head>
+
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button class="js-subscription" onclick="
+  subscribe()
+  
+  "> Subscribe </button>
+
+  <div class="js-spaces">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+
+  <p>
+    Amazom Shipping Calculator
+  </p>
+  <p>Orders under $40 = +$10 shipping.</p>
+  <p>Orders over $40 = FREE shipping.</p>
+  <input placeholder="Cost of order" class="js-costs" onkeydown=" 
+handlCostKeydown(event)  
+  ">
+  <button onclick="
+  totalCulc()
+  ">Calculate</button>
+  <p class="js-calc-result"></p>
+
+  <script>
+    function subscribe() {
+      //let subscribedButtonElement = document.querySelector('.js-subscription').innerText = 'Subscribed'
+      let subscribedButtonElement = document.querySelector('.js-subscription')
+
+      subscribedButtonElement.innerText === 'Subscribe' ? subscribedButtonElement
+        .innerText = 'Subscribed' : subscribedButtonElement.innerText = 'Subscribe'
+    }
+
+    function totalCulc() {
+
+      const costsValueElement = document.querySelector('.js-costs');
+      let cost = Number(costsValueElement.value)
+      //console.log(costsValueElement.value);
+      // console.log(cost);
+      // console.log(typeof cost);
+
+
+
+      if (cost < 40) {
+        cost = cost + 10
+        // console.log(cost);
+
+      }
+
+      document.querySelector('.js-calc-result')
+        .innerHTML = `$${cost}`
+
+    }
+
+    function handlCostKeydown(event) {
+      if (event.key === 'Enter') {
+        totalCulc()
+      }
+    }
+
+  </script>
+</body>
+
+</html>
