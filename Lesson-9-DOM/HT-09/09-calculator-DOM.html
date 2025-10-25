@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Calculator</title>
+</head>
+
+<body>
+  <p class="js-result-window"></p>
+  <p class="js-calcualtor">
+    <button onclick="
+        addNumbers(1)
+        ">
+      1
+    </button>
+    <button onclick="
+        addNumbers(2)
+        ">
+      2
+    </button>
+    <button onclick="
+        addNumbers(3)
+        ">
+      3
+    </button>
+
+    <button onclick="
+       addNumbers(4)
+        ">
+      4
+    </button>
+  </p>
+  <p>
+
+    <button onclick="
+        addNumbers(5)
+        ">
+      5
+    </button>
+    <button onclick="
+        addNumbers(6)
+        ">
+      6
+    </button>
+    <button onclick="
+        addNumbers(7)
+        ">
+      7
+    </button>
+    <button onclick="
+       addNumbers(8)
+        ">
+      8
+    </button>
+
+  </p>
+
+  <button onclick="
+        addNumbers(9)
+        ">
+    9
+  </button>
+  <button onclick="
+        addNumbers(0)
+        ">
+    0
+  </button>
+  <button onclick="
+      
+     addNumbers('+')
+      ">
+    +
+  </button>
+  <button onclick="
+     resultElement = (document.querySelector('.js-result-window').textContent = eval(calculation))
+
+      console.log(`Result is: ${eval(calculation)}`)
+      ">
+    =
+  </button>
+  </p>
+
+  <p>
+    <button>C</button>
+    <button>/</button>
+    <button>*</button>
+    <button>%</button>
+
+  </p>
+
+  </p>
+
+  <script>
+    let calculation = localStorage.getItem('calculation') || ''
+    let resultElement = (document.querySelector('.js-result-window').textContent = eval(calculation))
+
+    function addNumbers(value) {
+
+      console.log(calculation += String(value))
+      resultElement = document.querySelector('.js-result-window').textContent = calculation
+
+      return localStorage.setItem('calculation', calculation);
+      return resultElement
+    }
+  </script>
+</body>
+
+</html>

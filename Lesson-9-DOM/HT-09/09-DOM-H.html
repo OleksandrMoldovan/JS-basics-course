@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM-HT</title>
+</head>
+
+<body>
+
+
+
+  <input placeholder="Enter your name" onkeyup="
+onkeyUP()
+">
+
+
+
+  <p class="js-name"></p>
+  <script>
+
+
+    function showName() {
+      let nameElement = document.querySelector('input').value
+      nameElement = (document.querySelector('.js-name').textContent = `Your name is: ${nameElement}`)
+    }
+
+
+    function onkeyUP() {
+      let nameElement = document.querySelector('input').value
+      let result = document.querySelector('.js-name').textContent = nameElement
+      console.log(nameElement);
+    }
+
+
+  </script>
+
+</body>
+
+</html>
