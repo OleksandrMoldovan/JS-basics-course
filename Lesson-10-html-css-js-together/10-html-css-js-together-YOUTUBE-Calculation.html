@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>DOM Projects</title>
+  <style>
+    .subscribe-button {
+
+      border: none;
+      background-color: black;
+      color: white;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-left: 10px;
+      padding-right: 10px;
+      font-weight: bolder;
+      font-family: 'Times New Roman', Times, serif;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-bottom: 30px;
+    }
+
+    .is-subscribed {
+      font-family: 'Times New Roman', Times, serif;
+      background-color: rgb(240, 240, 240);
+      color: black;
+    }
+
+    .amazon-shipping {
+
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .input-text {
+
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 15px;
+      /* font-weight: bolder; */
+      /* padding-bottom: 10px;
+      padding-top: 10px;
+      padding-left: 10px;
+      padding-right: 10px; */
+      padding: 10px;
+    }
+
+    .calculate-button {
+      font-family: 'Times New Roman', Times, serif;
+
+      background-color: green;
+      border: none;
+      color: white;
+      font-size: 15px;
+      padding: 12px 15px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button class="js-subscription subscribe-button" onclick="
+  subscribe()
+  
+  "> Subscribe </button>
+
+  <div class="js-spaces">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+
+  <p class="amazon-shipping">
+    Amazom Shipping Calculator
+
+  <p>Orders under $40 = +$10 shipping.</p>
+  <p>Orders over $40 = FREE shipping.</p>
+  </p>
+  <input placeholder="Cost of order" class="js-costs  input-text" onkeydown=" 
+handlCostKeydown(event)  
+  ">
+  <button class="calculate-button" onclick="
+  totalCulc()
+  ">Calculate</button>
+  <p class="js-calc-result"></p>
+
+  <script>
+    function subscribe() {
+      //let subscribedButtonElement = document.querySelector('.js-subscription').innerText = 'Subscribed'
+      let subscribedButtonElement = document.querySelector('.js-subscription')
+
+      // subscribedButtonElement.innerText === 'Subscribe' ? subscribedButtonElement
+      //   .innerText = 'Subscribed' : subscribedButtonElement.innerText = 'Subscribe'
+      // subscribedButtonElement.classList.add('is-subscribed')
+
+      if (subscribedButtonElement.innerText === 'Subscribe') {
+        subscribedButtonElement.innerText = 'Subscribed'
+        subscribedButtonElement.classList.add('is-subscribed')
+      } else {
+        subscribedButtonElement.innerText = 'Subscribe'
+
+        subscribedButtonElement.classList.remove('is-subscribed')
+      }
+    }
+
+    function totalCulc() {
+
+      const costsValueElement = document.querySelector('.js-costs');
+      let cost = Number(costsValueElement.value)
+      //console.log(costsValueElement.value);
+      // console.log(cost);
+      // console.log(typeof cost);
+
+
+
+      if (cost < 40) {
+        cost = cost + 10
+        // console.log(cost);
+
+      }
+
+      document.querySelector('.js-calc-result')
+        .innerHTML = `$${cost}`
+
+    }
+
+    function handlCostKeydown(event) {
+      if (event.key === 'Enter') {
+        totalCulc()
+      }
+    }
+
+  </script>
+</body>
+
+</html>
