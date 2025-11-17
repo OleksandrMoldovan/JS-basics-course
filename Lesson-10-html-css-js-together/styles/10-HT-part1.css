@@ -1,0 +1,62 @@
+.js-amazon-button{
+  background-color: rgb(255, 216, 20);
+  padding: 5px 25px;
+  border: 0px;
+  border-radius: 25px;
+  margin: 10px;
+  font-weight: 550;
+}
+
+.js-uber-request-now-button{
+  background-color: black;
+  color: white;
+  font-weight: 550;
+  border: 0px;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.js-uber-scheduleForLater-button{
+  border: 0px;
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-weight: 550;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+ 
+}
+
+.js-switcher-button{
+  border: 0px;
+  background-color: rgb(230, 230, 230);
+  color: black;
+  font-weight: 550;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.js-switcher-button:hover {
+  background-color: black;
+  color: white;
+}
+
+
+.is-toggled{
+background-color: green;
+color: white;
+}
+
+.is-toggled:hover{
+  border: 0px;
+  background-color: green;
+  color: black;
+  font-weight: 550;
+  padding: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="../styles/10-H.css">
+  <title>HT10H</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+  <p>YouTube Subscribe Button</p>
+  <button class="js-subscription subscribe-button" onclick="
+  subscribe()
+  
+  "> Subscribe </button>
+
+  <div class="js-spaces">
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+  </div>
+
+  <p class="amazon-shipping">
+    Amazom Shipping Calculator
+
+  <p>Orders under $40 = +$10 shipping.</p>
+  <p>Orders over $40 = FREE shipping.</p>
+  </p>
+  <input placeholder="Cost of order" class="js-costs  input-text" onkeydown=" 
+handlCostKeydown(event)  
+  ">
+  <button class="calculate-button" onclick="
+  totalCulc()
+  ">Calculate</button>
+  <p class="js-calc-result"></p>
+
+  <script src="../scripts/10-H.js">
+
+
+  </script>
+</body>
+
+</html>
